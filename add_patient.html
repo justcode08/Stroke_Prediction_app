@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="navbar">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/patients">View Patients</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="container">
+    <h2>Add Patient</h2>
+
+    <form method="POST">
+        <input type="text" name="name" placeholder="Patient Name" required>
+        <input type="number" name="age" placeholder="Age" required>
+        <input type="text" name="glucose" placeholder="Glucose Level" required>
+        <input type="text" name="bmi" placeholder="BMI" required>
+
+        <button type="submit">Add Patient</button>
+    </form>
+</div>

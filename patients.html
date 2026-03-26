@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="navbar">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/add">Add Patient</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<h2>Patient Records</h2>
+
+<table>
+<tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Glucose</th>
+    <th>BMI</th>
+    <th>Action</th>
+</tr>
+
+{% for p in patients %}
+<tr>
+    <td>{{ p.name }}</td>
+    <td>{{ p.age }}</td>
+    <td>{{ p.glucose }}</td>
+    <td>{{ p.bmi }}</td>
+    <td>
+        <a class="button-link" href="/edit/{{ p.id }}">Edit</a>
+        <a class="button-link" href="/delete/{{ p.id }}">Delete</a>
+    </td>
+</tr>
+{% endfor %}
+</table>

@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<div class="navbar">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/patients">View Patients</a>
+    <a href="/logout">Logout</a>
+</div>
+
+<div class="container">
+    <h2>Edit Patient</h2>
+
+    <form method="POST">
+        <input type="text" name="name" value="{{ patient.name }}" required>
+        <input type="number" name="age" value="{{ patient.age }}" required>
+        <input type="text" name="glucose" value="{{ patient.glucose }}" required>
+        <input type="text" name="bmi" value="{{ patient.bmi }}" required>
+
+        <button type="submit">Update Patient</button>
+    </form>
+</div>
